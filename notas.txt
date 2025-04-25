@@ -9,6 +9,4 @@ modulo invitado = listo
 
 
 falta =
-
-modulo prestamo
 modulo reportes
