@@ -39,3 +39,7 @@ export function validarBusquedaInvitado(titulo, autor, genero) {
   }
   return true;
 }
+
+module.exports = { limpiarCamposInvitado,
+  llenarTablaInvitado,
+  validarBusquedaInvitado };

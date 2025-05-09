@@ -6,10 +6,10 @@ const connection = require('../config/dbConfig'); // Importar la conexión desde
 
 // Ruta para crear un nuevo libro
 router.post("/agregar", (req, res) => {const { isbn, titulo, autor, editorial, genero } = req.body;
-  const query ="INSERT INTO material_bibliografico (isbn, titulo, autor, editorial, genero) VALUES (?, ?, ?, ?, ?)";
+  const query ="INSERT INTO material_bibliografico (isbn, titulo, autor, editorial, genero, disponibilidad ) VALUES (?, ?, ?, ?, ?, ?)";
   connection.execute(
     query,
-    [isbn, titulo, autor, editorial, genero],
+    [isbn, titulo, autor, editorial, genero,1],
     (err, results) => {
       if (err) {
         return res.status(500).json({ error: err.message });

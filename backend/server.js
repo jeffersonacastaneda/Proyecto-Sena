@@ -31,6 +31,19 @@ app.get("/invitado", (req, res) => {res.sendFile(path.resolve(__dirname, "../fro
 // 🔥 Montar rutas de libros
 app.use("/libros", librosRoutes); 
 
+// validacion para que se puedan ejecutar las pruebas y levantar el servidor
 
-// 🔥 Iniciar el servidor
+if (require.main === module) {
+    app.listen(PORT, () => {
+      console.log(`✅ Servidor corriendo en http://localhost:${PORT}`);
+    });
+  }
+  
+  module.exports = app;
+
+/*
 app.listen(PORT, () => {console.log(`✅ Servidor corriendo en http://localhost:${PORT}`);});
+*/
+
+
+
